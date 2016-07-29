@@ -1,0 +1,31 @@
+{
+  "cars": [
+    {
+      "make": "Ford",
+      "model": "Pinto",
+      "year": "1978",
+      "price": "4999",
+      "color": "CornFlowerBlue",
+      "purchased": false,
+      "description": "If style isn't your thing, this car is for you! Great gas mileage!",
+    }
+    {
+      "make": "Chevy",
+      "model": "Chevette",
+      "year": "1979",
+      "price": "9999",
+      "color": "OrangeRed",
+      "purchased": false,
+      "description": "Want to emabarass your daughter while taking yourself down memory lane? This Chevette is sure to do just that!",
+    }
+    {
+      "make": "Nissan",
+      "model": "Skyline",
+      "year": "1970",
+      "price": "19999",
+      "color": "Red",
+      "purchased": false,
+      "description": "Beauty, class, power and nostalgia all in one! Directly imported from Japan for the true car enthusiast! We have converted this car to be USDM street legal for your enjoyment!", 
+    }
+  ]
+}
