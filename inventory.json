@@ -8,7 +8,7 @@
       "color": "CornFlowerBlue",
       "purchased": false,
       "description": "If style isn't your thing, this car is for you! Great gas mileage!",
-    }
+    },
     {
       "make": "Chevy",
       "model": "Chevette",
@@ -17,7 +17,7 @@
       "color": "OrangeRed",
       "purchased": false,
       "description": "Want to emabarass your daughter while taking yourself down memory lane? This Chevette is sure to do just that!",
-    }
+    },
     {
       "make": "Nissan",
       "model": "Skyline",
