@@ -1,8 +1,9 @@
-function showInventory (inventory) {
-  var list= document.querySelector('.cars')
 
-  cars.forEach(function (car) {
-    list.innerHTML += `<li>${cars}</li>`
+function showInventory (carToBe) {
+  var list= document.querySelector('.carsDisplay')
+
+  carToBe.forEach(function (car) {
+    list.innerHTML += `<li>${inventories}</li>`
   })
 }
 

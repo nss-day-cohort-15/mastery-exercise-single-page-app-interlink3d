@@ -7,7 +7,7 @@
       "price": "4999",
       "color": "CornFlowerBlue",
       "purchased": false,
-      "description": "If style isn't your thing, this car is for you! Great gas mileage!",
+      "description": "If style isn't your thing, this car is for you! Great gas mileage!"
     },
     {
       "make": "Chevy",
@@ -16,7 +16,7 @@
       "price": "9999",
       "color": "OrangeRed",
       "purchased": false,
-      "description": "Want to emabarass your daughter while taking yourself down memory lane? This Chevette is sure to do just that!",
+      "description": "Want to emabarass your daughter while taking yourself down memory lane? This Chevette is sure to do just that!"
     },
     {
       "make": "Nissan",
@@ -25,7 +25,7 @@
       "price": "19999",
       "color": "Red",
       "purchased": false,
-      "description": "Beauty, class, power and nostalgia all in one! Directly imported from Japan for the true car enthusiast! We have converted this car to be USDM street legal for your enjoyment!", 
+      "description": "Beauty, class, power and nostalgia all in one! Directly imported from Japan for the true car enthusiast! We have converted this car to be USDM street legal for your enjoyment!"
     }
   ]
 }
