@@ -1,18 +1,21 @@
 
 function populatePage (loadedInventory) {
-  var carList= document.querySelector('#inventoryBox')
+  var inventoryBox = document.querySelector('#inventoryBox .row')
 
   console.log(">>>>", loadedInventory)
   loadedInventory.forEach(function (car) {
-    carList.innerHTML += 
-    `<li><h3>${car.make}</h3></li>
-     <li><h4>${car.model}</h4></li>
-     <li><h4>${car.year}</h4></li>
-     <li><h4>${car.price}</h4></li>
-     <li><h5>${car.color}</h5></li>
-     <li><h5>${car.purchased}</h5></li>
-     <li><p>${car.description}</p></li>`
-
+    inventoryBox.innerHTML += 
+    `<div class="col-md-4 success card">
+      <ul class="list-unstyled">
+       <li><h2>${car.make}</h2></li>
+       <li><h3>${car.model}</h3></li>
+       <li><h5>${car.year}<h5></li>
+       <li><h5>${car.price}<h5></li>
+       <li><h5>${car.color}<h5></li>
+       <li><h5><u>${car.purchased}</u></h5></li>
+       <li><p>${car.description}</p></li>
+      </ul>
+    </div>`
   })
 }
 
