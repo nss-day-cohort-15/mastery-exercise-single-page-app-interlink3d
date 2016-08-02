@@ -1,11 +1,13 @@
 
-function showInventory (carToBe) {
-  var list= document.querySelector('.carsDisplay')
+function populatePage (carLot) {
+  var carList= document.querySelector('#inventoryBox')
+  var cars = []
 
   carToBe.forEach(function (car) {
-    list.innerHTML += `<li>${inventories}</li>`
+    carList.innerHTML += `<li>${carsDisplay}</li>`
   })
 }
 
 
-Carlot.getInventory(showInventory);
+Carlot.getInventory();
+

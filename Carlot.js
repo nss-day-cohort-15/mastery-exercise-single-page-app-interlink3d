@@ -1,18 +1,17 @@
 var Carlot = (function () {
-  var carToBe = []
+  var inventory = [];
 
   return {
     getInventory: function (cb) {
       var xhr = new XMLHttpRequest() //get data
       xhr.open('GET', 'inventory.json') 
       xhr.addEventListener('load', function (evt) {
-        inventory = JSON.parse(evt.target.responseText) //store in private variable
+        inventory = JSON.parse(xhr.responseText).cars; //store in private variable
       console.log("pulled inventory", inventory)  
-        cb(inventory)  //execute callback
+        callback(inventory);  //execute callback
       })   
-      xhr.send()  
+      xhr.send();  
     }
   }
 
 }())
-
