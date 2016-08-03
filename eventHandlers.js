@@ -21,14 +21,23 @@
 
 
 function loadingevents () {
-document.querySelector(".descId").addEventListener("click", focusEvent);
+
+document.getElementById("descId").addEventListener('click', focusEvent);
+
 
 function focusEvent () {
     document.getElementById("searchCrit").focus();
   };
+
+var inputBox = document.getElementById("searchCrit");
+
+inputBox.onkeyup = function(){
+    document.getElementById("descId").innerHTML = inputBox.value;
+};
+
 }
 
-
+// click target event listeners and remove event listener 
 
 // 1. When you start typing into the navbar's text input, 
 // the description of the currently selected car should be 
