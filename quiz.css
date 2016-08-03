@@ -22,9 +22,16 @@ h1 {
  
 }
 
+.cardToggle {
+  border: 10px solid black;
+  background-color: lime;
+}
+
 .card {
-  border: 1px solid red;
+  border: 1px solid black;
+  background-color: lightgrey;
   margin: 1em;
   height: 300px;
   width: 400px;
 }
+
