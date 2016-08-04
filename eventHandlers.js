@@ -2,17 +2,16 @@
 // change the width of the border to a higher value, 
 //and change the background color to any other color of your choosing.
 
+function loadingevents () {
 
 
 // function loadingevents () {
-//   console.log("loaded after DOM")
-//   function cardMorph() {
-//     document.getElementsByClassName("card").classList.toggle("cardToggle");
-//   }
-// }
-
-// document.getElementById("loadedCard").addEventListener("click", cardMorph);
-
+  console.log("loaded after DOM")
+  function cardMorph() {
+    document.getElementById("loadCard").classList.toggle("cardToggle");
+  
+document.getElementById("loadedCard").addEventListener("click", cardMorph);
+}
 
 
 // 1. Also, on click of the car element, clear the value of
@@ -20,22 +19,65 @@
 // (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus).
 
 
-function loadingevents () {
+'ul'.onclick = function(event) {
+    event = event || window.event // cross-browser event
+    
+    if (event.stopPropagation) {
+        // W3C standard variant
+        event.stopPropagation()
+    } else {
+        // IE variant
+        event.cancelBubble = true
+    }
+  }
 
-document.getElementById("descId").addEventListener('click', focusEvent);
+var target = event.target || event.srcElement
 
+// target.addEventListener('click', focusEvent);
+
+// document.getElementById("descId").addEventListener('click', focusEvent);
+
+// this code in between this block works good to tag al UL elements
+
+var carD = document.getElementsByTagName('ul')
+
+for(var i=0; i<carD.length; i++) {
+  carD[i].onclick = function(e) {
+    e = e || event
+    var target = e.target || e.srcElement
+
+    this.addEventListener('click', focusEvent);  
+  }
+
+}
+}
 
 function focusEvent () {
     document.getElementById("searchCrit").focus();
   };
 
+// end of code block for focus ---
+
 var inputBox = document.getElementById("searchCrit");
+
+var descrip = document.getElementById("descId")
+
+for(var i=0; i<carD.length; i++) {
+  carD[i].onclick = function(e) {
+    e = e || event
+    var target = e.target || e.srcElement
+
+    this.addEventListener('click', focusEvent);  
+  }
+
+}
 
 inputBox.onkeyup = function(){
     document.getElementById("descId").innerHTML = inputBox.value;
 };
 
-}
+
+
 
 // click target event listeners and remove event listener 
 
