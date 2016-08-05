@@ -6,26 +6,13 @@ h1 {
   text-align: center;
 }
 
-.navbar {
-
-}
-
-#inventoryBox {
-
-}
-
-.container-fluid {
-  
-}
-
-.row {
- 
-}
-
 .cardToggle {
   border: 10px solid black;
   background-color: lime;
   padding-left: 1em;
+  margin: 1em;
+  height: 300px;
+  width: 400px;
 }
 
 .card {

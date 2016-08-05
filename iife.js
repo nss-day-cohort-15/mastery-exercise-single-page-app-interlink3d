@@ -6,7 +6,7 @@ function populatePage (loadedInventory) {
   loadedInventory.forEach(function (car) {
     inventoryBox.innerHTML += 
     `<div class="col-md-4 success">
-      <ul id="loadedCard" class="list-unstyled card cardToggle" style="border: 4px solid ${car.color}">
+      <ul id="loadedCard" class="list-unstyled changes card cardToggle" style="border: solid ${car.color}">
        <li><h2>${car.image}</h2></li>
        <li><h2>Make: ${car.make}</h2></li>
        <li><h3>Model: ${car.model}</h3></li>
@@ -22,6 +22,7 @@ function populatePage (loadedInventory) {
 loadingevents ()
 
 }
+
 
 Carlot.getInventory(populatePage);
 

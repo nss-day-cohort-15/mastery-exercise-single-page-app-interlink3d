@@ -14,10 +14,7 @@
 function loadingevents () {
   console.log("loaded after DOM")
 
-  function cardMorph() {
-    document.getElementById("loadCard").classList.toggle("cardToggle");
-    document.getElementById("loadedCard").addEventListener("click", cardMorph);
-  }
+  
 
 
   // 1. Also, on click of the car element, clear the value of
@@ -51,19 +48,37 @@ function loadingevents () {
   }
   
   // end of duplicating input box text 
+  // var modify = document.getElementById('showButton');
+
+  // modify.addEventListener('click', removeKeyupListener)
 
   function removeKeyupListener () {
     // remove keyup event when another card is clicked and or
     // modify button is clicked
-    if (true) {document.getElementById("searchCrit").addEventListener('click', clearBox)} 
-
-      else {}
+    console.log("clicked")
+    // removeEventListener(event.currentTarget);
+   
   }
 
-  function clearBox () {
-    searchCrit.value = '';
-  }
+
+
+    var cards3 = document.getElementById("loadedCard");
+    for (var i = 0; i < changes.length; i++) {
+      cards3[i].addEventListener(click, cardMorph);
+    }
+
+  function cardMorph() {
+  document.getElementById("loadedCard").classList.toggle("card");
+  // document.getElementById("loadedCard").addEventListener("click", cardMorph);
+  
+  };
+
 }
+  // function clearBox () {
+  //   var inputBox = document.getElementById("searchCrit");
+  //   inputBox.value = '';
+  // }
+
 
 
 // click target event listeners and remove event listener 
