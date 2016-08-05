@@ -49,8 +49,8 @@ for(var i=0; i<carD.length; i++) {
     this.addEventListener('click', focusEvent);  
   }
 
-}
-}
+};
+
 
 function focusEvent () {
     document.getElementById("searchCrit").focus();
@@ -62,12 +62,12 @@ var inputBox = document.getElementById("searchCrit");
 
 var descrip = document.getElementById("descId")
 
-for(var i=0; i<carD.length; i++) {
-  carD[i].onclick = function(e) {
+for(var i=0; i<descrip.length; i++) {
+  descrip[i].onclick = function(e) {
     e = e || event
     var target = e.target || e.srcElement
 
-    this.addEventListener('click', focusEvent);  
+    this.addEventListener('click', inputBox.onkeyup);  
   }
 
 }
@@ -76,7 +76,7 @@ inputBox.onkeyup = function(){
     document.getElementById("descId").innerHTML = inputBox.value;
 };
 
-
+}
 
 
 // click target event listeners and remove event listener 
