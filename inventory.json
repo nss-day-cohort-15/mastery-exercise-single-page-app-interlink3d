@@ -1,6 +1,7 @@
 {
   "cars": [
     {
+      "image": " ",
       "make": "Ford",
       "model": "Pinto",
       "year": "1978",
@@ -10,6 +11,7 @@
       "description": "Want to emabarass your daughter while taking yourself down memory lane? This Chevette is sure to do just that!"
     },
     {
+      "image": " ",
       "make": "Chevy",
       "model": "Chevette",
       "year": "1979",
@@ -19,6 +21,7 @@
       "description": "If style isn't your thing, this car is for you! Great gas mileage!"
     },
     {
+      "image": " ",
       "make": "Nissan",
       "model": "Skyline",
       "year": "1970",
