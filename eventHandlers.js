@@ -22,12 +22,12 @@ function loadingevents () {
   // (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus).
 
 
-  // this code in between this block works good to tag al UL elements for focus:
+  // this code in between this block works good to tag 3 cards for focus:
 
-  var carD = document.getElementsByTagName('ul');
+  var carCard = document.getElementsByClassName('success');
 
-  for(var i=0; i<carD.length; i++) {
-    carD[i].addEventListener('click', focusEvent);
+  for(var i=0; i<carCard.length; i++) {
+    carCard[i].addEventListener('click', focusEvent);
   }
 
   function focusEvent () {
@@ -48,30 +48,31 @@ function loadingevents () {
   }
   
   // end of duplicating input box text 
-  // var modify = document.getElementById('showButton');
 
-  // modify.addEventListener('click', removeKeyupListener)
+  // start of changing card border and background color:
+
+
+  function cardMorph() {
+  (event.currentTarget).classList.toggle("card");  
+  };
+
+    var cards3 = document.getElementsByClassName("changes");
+    for (var i = 0; i < 3; i++) {
+      cards3[i].addEventListener('click', cardMorph)
+    }
+  // end of changing card border and color --- 
+
+
 
   function removeKeyupListener () {
     // remove keyup event when another card is clicked and or
     // modify button is clicked
-    console.log("clicked")
-    // removeEventListener(event.currentTarget);
+  var modify = document.getElementsByClassName('btn');
+  (event.currentTarget).removeEventListener('keyup', focusEvent);
+  modify.addEventListener('click', removeKeyupListener)
+  // modify.addEventListener('click', )
    
   }
-
-
-
-    var cards3 = document.getElementById("loadedCard");
-    for (var i = 0; i < changes.length; i++) {
-      cards3[i].addEventListener(click, cardMorph);
-    }
-
-  function cardMorph() {
-  document.getElementById("loadedCard").classList.toggle("card");
-  // document.getElementById("loadedCard").addEventListener("click", cardMorph);
-  
-  };
 
 }
   // function clearBox () {
