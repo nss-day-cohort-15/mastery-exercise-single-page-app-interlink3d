@@ -15,7 +15,27 @@ function loadingevents () {
   console.log("loaded after DOM")
 
   
+  function removeKeyupListener () {
+    // remove keyup event when another card is clicked and or
+    // modify button is clicked
+    var modify = document.getElementsByClassName('btn');
+    (event.currentTarget).removeEventListener('keyup', focusEvent);
+    modify.addEventListener('click', removeKeyupListener)
+  
+  function clearBox () {
+    var inputBox = document.getElementById("searchCrit");  
+    inputBox.value = '';
 
+    var modify = document.getElementsByClassName('btn');
+    modify.addEventListener('click', clearBox)
+  }
+
+  
+  // modify.addEventListener('click', )
+  
+
+
+  }
 
   // 1. Also, on click of the car element, clear the value of
   // the text input in the navbar, and put the [cursor in the text input]
@@ -62,25 +82,7 @@ function loadingevents () {
     }
   // end of changing card border and color --- 
 
-
-
-  function removeKeyupListener () {
-    // remove keyup event when another card is clicked and or
-    // modify button is clicked
-  var modify = document.getElementsByClassName('btn');
-  (event.currentTarget).removeEventListener('keyup', focusEvent);
-  modify.addEventListener('click', removeKeyupListener)
-  // modify.addEventListener('click', )
-   
-  }
-
 }
-  // function clearBox () {
-  //   var inputBox = document.getElementById("searchCrit");
-  //   inputBox.value = '';
-  // }
-
-
 
 // click target event listeners and remove event listener 
 
