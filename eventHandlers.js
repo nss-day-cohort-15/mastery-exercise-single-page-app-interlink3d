@@ -11,8 +11,12 @@
 //    1. A car DOM element that was clicked on.
 //    1. A color name.
 
-function loadingevents () {
+var Carlot = (function (execute) {
+
+execute.loadingevents = function () {
   console.log("loaded after DOM")
+
+
 
   
 
@@ -92,12 +96,9 @@ function loadingevents () {
     }
   // end of changing card border and color --- 
 
-}
+ }
+  
+  return execute
 
-// click target event listeners and remove event listener 
-
-// 1. When you start typing into the navbar's text input, 
-// the description of the currently selected car should be 
-// bound to what you are typing in and match it exactly.
-
+}(Carlot))
 

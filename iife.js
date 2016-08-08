@@ -1,11 +1,11 @@
 var Carlot = (function (onScreen) {
 
-onScreen.populatePage = function (loadedInventory)  {
+onScreen.populatePage = function ()  {
   var inventoryBox = document.querySelector('#inventoryBox .row')
   var inventToLoad = onScreen.getJson()
 
   console.log(">>>>", inventToLoad)
-  loadedInventory.forEach(function (car) {
+  inventToLoad.forEach(function (car) {
     inventoryBox.innerHTML += 
     `<div class="col-md-3 success">
       <ul id="loadedCard" class="list-unstyled changes card cardToggle" style="border-color: ${car.color}">
@@ -20,7 +20,7 @@ onScreen.populatePage = function (loadedInventory)  {
     </div>`
   })
 
-loadingevents ()
+  Carlot.loadingevents ()
 
 }
 
