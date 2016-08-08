@@ -1,9 +1,10 @@
+var Carlot = (function (onScreen) {
 
-
-function populatePage (loadedInventory)  {
+onScreen.populatePage = function (loadedInventory)  {
   var inventoryBox = document.querySelector('#inventoryBox .row')
+  var inventToLoad = onScreen.getJson()
 
-  console.log(">>>>", loadedInventory)
+  console.log(">>>>", inventToLoad)
   loadedInventory.forEach(function (car) {
     inventoryBox.innerHTML += 
     `<div class="col-md-3 success">
@@ -23,7 +24,10 @@ loadingevents ()
 
 }
 
+  return onScreen
 
-Carlot.getInventory(populatePage);
+})(Carlot)
+
+Carlot.getInventory(Carlot.populatePage);
 
 
