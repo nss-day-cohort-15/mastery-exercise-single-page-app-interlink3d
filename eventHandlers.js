@@ -15,31 +15,9 @@ function loadingevents () {
   console.log("loaded after DOM")
 
   
-  function removeKeyupListener () {
-    // remove keyup event when another card is clicked and or
-    // modify button is clicked
-    var modify = document.getElementsByClassName('btn');
-    (event.currentTarget).removeEventListener('keyup', focusEvent);
-    modify.addEventListener('click', removeKeyupListener)
-  
-  function clearBox () {
-    var inputBox = document.getElementById("searchCrit");  
-    inputBox.value = '';
 
-    var modify = document.getElementsByClassName('btn');
-    modify.addEventListener('click', clearBox)
-  }
-
-  
-  // modify.addEventListener('click', )
-  
-
-
-  }
-
-  // 1. Also, on click of the car element, clear the value of
-  // the text input in the navbar, and put the [cursor in the text input]
-  // (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus).
+  var mod = document.getElementById('showButton');
+  mod.addEventListener('click', removeKeyupListener)
 
 
   // this code in between this block works good to tag 3 cards for focus:
@@ -47,12 +25,30 @@ function loadingevents () {
   var carCard = document.getElementsByClassName('success');
 
   for(var i=0; i<carCard.length; i++) {
-    carCard[i].addEventListener('click', focusEvent);
+    carCard[i].addEventListener('click', function(){
+      clearBox ()
+      focusEvent(event);
+    });
   }
 
   function focusEvent () {
-    document.getElementById("searchCrit").focus();
-    addKeyupListener(event.currentTarget)
+    console.log(event.currentTarget)
+    // clearBox ()
+    // addKeyupListener(event.currentTarget)
+    test(event.currentTarget)
+    // removeKeyupListener()
+  }
+
+  function test(evt){
+    var x = evt.querySelector('ul li.descrip');
+    var y = evt.querySelector('ul');
+    console.log(x)
+    var inputBox = document.getElementById("searchCrit");
+    inputBox.addEventListener('keyup', function(){
+      if (!y.classList.contains('card')){
+      x.innerHTML = inputBox.value;
+      }
+    })
   }
 
   // end of code block for focus ---
@@ -63,11 +59,25 @@ function loadingevents () {
     var inputBox = document.getElementById("searchCrit");
 
     inputBox.addEventListener('keyup', function () {
-      carBox.querySelector('.descrip').innerHTML = 'Description: ' + inputBox.value;
+      var descript = carBox.querySelector('ul li.descrip')
+      descript.innerHTML = 'Description: ' + inputBox.value;
     })
   }
   
   // end of duplicating input box text 
+
+  function removeKeyupListener () {
+    // remove keyup event when another card is clicked and or
+    // modify button is clicked
+    var inputBox = document.getElementById("searchCrit");
+    inputBox.removeEventListener('keyup', function(){});
+  }
+    
+    function clearBox () {
+      var inputBox = document.getElementById("searchCrit");  
+      inputBox.value = '';
+      inputBox.focus()  
+      }
 
   // start of changing card border and background color:
 

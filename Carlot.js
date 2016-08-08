@@ -12,6 +12,9 @@ var Carlot = (function () {
         // cb(JSON.parse(evt.target.responseText))  //execute callback
       })   
       xhr.send();  
+    },
+    getJson: function () {
+      return inventory;
     }
   }
 
