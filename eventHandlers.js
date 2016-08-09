@@ -1,101 +1,66 @@
-// 1. When you click on one of the car elements, 
-// change the width of the border to a higher value, 
-//and change the background color to any other color of your choosing.
-
-// --- The final IIFE should augment the object with two more functions. 
-// One function resets the border thickness and background color for each 
-// car element back to the original values. The other function changes the 
-// thickness of the border of a car element, and changes its background color. 
-// The function must accept two arguments.
-
-//    1. A car DOM element that was clicked on.
-//    1. A color name.
-
 var Carlot = (function (execute) {
 
 execute.loadingevents = function () {
   console.log("loaded after DOM")
   var inputBox = document.getElementById("searchCrit");
-
-
-  
-
-  var mod = document.getElementById('showButton');
-  mod.addEventListener('click', removeKeyupListener)
-
-
-  // this code in between this block works good to tag 3 cards for focus:
-
   var carCard = document.getElementsByClassName('success');
+  var modify = document.getElementById("showButton")
+  modify.addEventListener("click", removeFocusClick); 
+  inputBox.addEventListener("keydown", removeFocusEnter);
+
+  // this code tags 3 cards to be able to access focus:
 
   for(var i=0; i<carCard.length; i++) {
     carCard[i].addEventListener('click', function(){
-      clearBox ()
       focusEvent(event);
     });
   }
 
+// code block for focusing and mirror event ---
+
   function focusEvent () {
-    console.log(event.currentTarget)
-    // clearBox ()
-    // addKeyupListener(event.currentTarget)
-    test(event.currentTarget)
-    // removeKeyupListener()
+    inputBox.value = '';
+    inputBox.focus()
+    mirror(event.currentTarget)
   }
 
-  function test(evt){
-    var x = evt.querySelector('ul li.descrip');
-    var y = evt.querySelector('ul');
-    console.log(x)
-    // var inputBox = document.getElementById("searchCrit");
+  function mirror(evt){
+    var description = evt.querySelector('ul li.descrip');
+    var cardSelected = evt.querySelector('ul');
+   
     inputBox.addEventListener('keyup', function(){
-      if (!y.classList.contains('card')){
-      x.innerHTML = inputBox.value;
+      if (!cardSelected.classList.contains('card')){
+      description.innerHTML =  'Description: ' + inputBox.value;
       }
     })
-  }
-
-  // end of code block for focus ---
-
-  // duplicates text entered into box into the DOM:
-
-  function addKeyupListener (carBox) {
-
-    inputBox.addEventListener('keyup', function () {
-      var descript = carBox.querySelector('ul li.descrip')
-      descript.innerHTML = 'Description: ' + inputBox.value;
-    })
-  }
   
-  // end of duplicating input box text 
-
-    // remove keyup event when another card is clicked and or
-    // modify button is clicked
-  function removeKeyupListener () {
-    inputBox.removeEventListener('keyup', function(){});
   }
     
-    function clearBox () {
+  function removeFocusClick (m) {
       inputBox.value = '';
-      inputBox.focus()  
-      }
+      inputBox.blur();
+  }
+  
+  function removeFocusEnter (e) {
+    if (13 === e.keyCode) {
+      inputBox.value = '';
+      inputBox.blur()
+    }
+  }
 
   // start of changing card border and background color:
 
-
   function cardMorph() {
-  (event.currentTarget).classList.toggle("card");  
+    (event.currentTarget).classList.toggle("card");  
   };
 
     var cards3 = document.getElementsByClassName("changes");
     for (var i = 0; i < 3; i++) {
       cards3[i].addEventListener('click', cardMorph)
     }
-  // end of changing card border and color --- 
 
  }
 
   return execute
 
 }(Carlot))
-
