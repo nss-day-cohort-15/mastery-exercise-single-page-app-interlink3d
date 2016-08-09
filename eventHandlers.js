@@ -15,7 +15,7 @@ var Carlot = (function (execute) {
 
 execute.loadingevents = function () {
   console.log("loaded after DOM")
-
+  var inputBox = document.getElementById("searchCrit");
 
 
   
@@ -47,7 +47,7 @@ execute.loadingevents = function () {
     var x = evt.querySelector('ul li.descrip');
     var y = evt.querySelector('ul');
     console.log(x)
-    var inputBox = document.getElementById("searchCrit");
+    // var inputBox = document.getElementById("searchCrit");
     inputBox.addEventListener('keyup', function(){
       if (!y.classList.contains('card')){
       x.innerHTML = inputBox.value;
@@ -60,7 +60,6 @@ execute.loadingevents = function () {
   // duplicates text entered into box into the DOM:
 
   function addKeyupListener (carBox) {
-    var inputBox = document.getElementById("searchCrit");
 
     inputBox.addEventListener('keyup', function () {
       var descript = carBox.querySelector('ul li.descrip')
@@ -70,15 +69,13 @@ execute.loadingevents = function () {
   
   // end of duplicating input box text 
 
-  function removeKeyupListener () {
     // remove keyup event when another card is clicked and or
     // modify button is clicked
-    var inputBox = document.getElementById("searchCrit");
+  function removeKeyupListener () {
     inputBox.removeEventListener('keyup', function(){});
   }
     
     function clearBox () {
-      var inputBox = document.getElementById("searchCrit");  
       inputBox.value = '';
       inputBox.focus()  
       }
@@ -97,7 +94,7 @@ execute.loadingevents = function () {
   // end of changing card border and color --- 
 
  }
-  
+
   return execute
 
 }(Carlot))
