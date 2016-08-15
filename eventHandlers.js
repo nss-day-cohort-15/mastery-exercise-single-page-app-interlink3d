@@ -3,8 +3,9 @@ var Carlot = (function (execute) {
 execute.loadingevents = function () {
   console.log("loaded after DOM")
   var inputBox = document.getElementById("searchCrit");
-  var carCard = document.getElementsByClassName('success');
+  var carCard = document.getElementsByClassName("success");
   var modify = document.getElementById("showButton")
+  var cards = document.getElementsByClassName("changes");
 
   // this code tags 3 cards to be able to access focus:
 
@@ -22,9 +23,9 @@ execute.loadingevents = function () {
     mirror(event.currentTarget);
   }
 
-  function mirror(evt){
-    var description = evt.querySelector('ul li.descrip');
-    var cardSelected = evt.querySelector('ul');
+  function mirror(event){
+    var description = event.querySelector('ul li.descrip');
+    var cardSelected = event.querySelector('ul');
    
     inputBox.addEventListener('keyup', function(){
       if (!cardSelected.classList.contains('card')){
@@ -41,9 +42,8 @@ execute.loadingevents = function () {
       inputBox.value = '';
       inputBox.blur();
 
-      var car = document.getElementsByClassName("changes");
-      for (var i = 0; i < 3; i++) {
-      car[i].classList.add('card');
+      for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.add('card');
     } 
   }
   
@@ -52,9 +52,8 @@ execute.loadingevents = function () {
       inputBox.value = '';
       inputBox.blur();
 
-      var car = document.getElementsByClassName("changes");
-      for (var i = 0; i < 3; i++) {
-      car[i].classList.add('card');       
+      for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.add('card');       
     }
   }
 }
@@ -64,9 +63,8 @@ execute.loadingevents = function () {
     (event.currentTarget).classList.toggle("card");  
   };
 
-    var cards3 = document.getElementsByClassName("changes");
-    for (var i = 0; i < 3; i++) {
-      cards3[i].addEventListener('click', cardMorph)
+    for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', cardMorph)
     }
 
  }

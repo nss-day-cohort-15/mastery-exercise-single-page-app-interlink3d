@@ -5,13 +5,15 @@ onScreen.populatePage = function ()  {
   var inventToLoad = onScreen.getJson()
 
   console.log(">>>>", inventToLoad)
-  inventToLoad.forEach(function (car, i){ 
 
+  var start = ""
+
+  inventToLoad.forEach(function (car, i){ 
   if (i % 3 === 0){
-    inventoryBox.innerHTML += `<div class="row">`
+    start += `<div class="row">`
   };
- 
-    inventoryBox.innerHTML += 
+  
+    start += 
     `<div class="col-md-3 success">
       <ul id="loadedCard" class="list-unstyled changes card cardToggle" style="border-color: ${car.color}">
        <li><h2>Make: ${car.make}</h2></li>
@@ -25,8 +27,10 @@ onScreen.populatePage = function ()  {
     </div>`
  
   if ((i + 1) % 3 === 0){
-    inventoryBox.innerHTML += `</div>`
+    start += `</div>`
   };
+
+    inventoryBox.innerHTML = start
 
 })
 
