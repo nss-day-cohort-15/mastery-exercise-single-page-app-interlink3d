@@ -5,8 +5,6 @@ execute.loadingevents = function () {
   var inputBox = document.getElementById("searchCrit");
   var carCard = document.getElementsByClassName('success');
   var modify = document.getElementById("showButton")
-  modify.addEventListener("click", removeFocusClick); 
-  inputBox.addEventListener("keydown", removeFocusEnter);
 
   // this code tags 3 cards to be able to access focus:
 
@@ -18,10 +16,10 @@ execute.loadingevents = function () {
 
 // code block for focusing and mirror event ---
 
-  function focusEvent () {
+  function focusEvent (event) {
     inputBox.value = '';
-    inputBox.focus()
-    mirror(event.currentTarget)
+    inputBox.focus(); 
+    mirror(event.currentTarget);
   }
 
   function mirror(evt){
@@ -36,18 +34,30 @@ execute.loadingevents = function () {
   
   }
     
-  function removeFocusClick (m) {
+  modify.addEventListener("click", removeFocusClick); 
+  inputBox.addEventListener("keydown", removeFocusEnter);
+  
+  function removeFocusClick () {
       inputBox.value = '';
       inputBox.blur();
+
+      var car = document.getElementsByClassName("changes");
+      for (var i = 0; i < 3; i++) {
+      car[i].classList.add('card');
+    } 
   }
   
-  function removeFocusEnter (e) {
-    if (13 === e.keyCode) {
+  function removeFocusEnter () {
+    if (13 === event.keyCode) {
       inputBox.value = '';
-      inputBox.blur()
+      inputBox.blur();
+
+      var car = document.getElementsByClassName("changes");
+      for (var i = 0; i < 3; i++) {
+      car[i].classList.add('card');       
     }
   }
-
+}
   // start of changing card border and background color:
 
   function cardMorph() {
