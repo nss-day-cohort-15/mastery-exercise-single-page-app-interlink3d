@@ -6,18 +6,18 @@ h1 {
   text-align: center;
 }
 
-.cardToggle {
-  border: 10px solid;
-  background-color: lime;
+.card {
+  border: 5px solid;
+  background-color: lightgrey;
   padding-left: 1em;
   padding-right: 1em;
   height: 400px;
   width: 300px;
 }
 
-.card {
-  border: 5px solid;
-  background-color: lightgrey;
+.cardToggle {
+  border: 10px solid;
+  background-color: lime;
   padding-left: 1em;
   padding-right: 1em;
   height: 400px;

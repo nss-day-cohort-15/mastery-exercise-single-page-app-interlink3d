@@ -8,14 +8,14 @@ onScreen.populatePage = function ()  {
 
   var start = ""
 
-  inventToLoad.forEach(function (car, i){ 
+  inventToLoad.forEach(function (car, i){
   if (i % 3 === 0){
     start += `<div class="row">`
   };
-  
-    start += 
+
+    start +=
     `<div class="col-md-3 success">
-      <ul id="loadedCard" class="list-unstyled changes card cardToggle" style="border-color: ${car.color}">
+      <ul id="loadedCard" class="list-unstyled changes card " style="border-color: ${car.color}">
        <li><h2>Make: ${car.make}</h2></li>
        <li><h3>Model: ${car.model}</h3></li>
        <li><h5>Year: ${car.year}<h5></li>
@@ -25,7 +25,7 @@ onScreen.populatePage = function ()  {
        <li class="descrip">Description: ${car.description}</li>
       </ul>
     </div>`
- 
+
   if ((i + 1) % 3 === 0){
     start += `</div>`
   };
