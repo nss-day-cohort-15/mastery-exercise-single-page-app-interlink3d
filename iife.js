@@ -4,7 +4,7 @@ onScreen.populatePage = function ()  {
   var inventoryBox = document.querySelector('#inventoryBox')
   var inventToLoad = onScreen.getJson()
 
-  console.log(">>>>", inventToLoad)
+  // console.log(">>>>", inventToLoad)
 
   var start = ""
 
@@ -32,7 +32,7 @@ onScreen.populatePage = function ()  {
 
     inventoryBox.innerHTML = start
 
-})
+});
 
   Carlot.loadingevents ()
 
@@ -43,5 +43,3 @@ onScreen.populatePage = function ()  {
 })(Carlot)
 
 Carlot.getInventory(Carlot.populatePage);
-
-
