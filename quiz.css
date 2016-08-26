@@ -1,0 +1,29 @@
+h1 {
+  color: red;
+}
+
+.shopSign {
+  text-align: center;
+}
+
+.card {
+  border: 5px solid;
+  background-color: lightgrey;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 400px;
+  width: 300px;
+}
+
+.cardToggle {
+  border: 10px solid;
+  background-color: lime;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 400px;
+  width: 300px;
+}
+
+.success {
+  margin: 1em;
+}
